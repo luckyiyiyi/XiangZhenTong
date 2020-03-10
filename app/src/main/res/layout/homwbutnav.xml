@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/navhome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/homeimg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/homecheck"/>
+        <TextView
+            android:id="@+id/hometext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/home"
+            android:textColor="@color/home"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/navcategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/categoryimg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/categoryuncheck"/>
+        <TextView
+            android:id="@+id/categorytext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/category"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/navset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="30dp"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/setimg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/setuncheck"/>
+        <TextView
+            android:id="@+id/settext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/set"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+
+</RelativeLayout>
