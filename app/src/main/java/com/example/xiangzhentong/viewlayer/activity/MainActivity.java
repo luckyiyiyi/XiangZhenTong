@@ -1,8 +1,10 @@
 package com.example.xiangzhentong.viewlayer.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,11 +26,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private HomeFragment homeFragment;
     private CategoryFragment categoryFragment;
     private SetFragment setFragment;
+    private String butposiotion = "home";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent intent = getIntent();
+        String position = intent.getStringExtra("position");
+        if(position!=null){
+            butposiotion = position;
+        }
+        Log.d("新的页码",butposiotion);
         homeFragment = new HomeFragment();
         categoryFragment = new CategoryFragment();
         setFragment = new SetFragment();
@@ -36,14 +45,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .add(R.id.main_content,homeFragment,homeFragment.getClass().getName())
                 .add(R.id.main_content,categoryFragment,categoryFragment.getClass().getName())
                 .add(R.id.main_content,setFragment,setFragment.getClass().getName())
-                .hide(categoryFragment)
-                .hide(setFragment)
                 .commit();
-        initView();
+        initView(butposiotion);
     }
 
     //初始化
-    private void initView(){
+    private void initView(String butposiotion){
         navhomeimg = findViewById(R.id.homeimg);
         navcatimg = findViewById(R.id.categoryimg);
         navsetimg = findViewById(R.id.setimg);
@@ -58,37 +65,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         navcategory.setOnClickListener(MainActivity.this);
         View navset = findViewById(R.id.navset);
         navset.setOnClickListener(MainActivity.this);
+        initfragment(butposiotion);
     }
-
+    public void initfragment(String butposiotion){
+        switch (butposiotion){
+            case "home":
+                selecthome();
+                return;
+            case "fenlei":
+                selectcat();
+                return;
+            case "shezhi":
+                selectset();
+                return;
+        }
+    }
     //底部导航切换页面
     public void onClick(View view){
         switch (view.getId()){
             case R.id.navhome:
                 selecthome();
-                getSupportFragmentManager().beginTransaction()
-                        .show(homeFragment)
-                        .hide(categoryFragment)
-                        .hide(setFragment)
-                        .commit();
-                toptitle.setText("首页");
                 return;
             case R.id.navcategory:
                 selectcat();
-                getSupportFragmentManager().beginTransaction()
-                        .hide(homeFragment)
-                        .show(categoryFragment)
-                        .hide(setFragment)
-                        .commit();
-                toptitle.setText("分类");
                 return;
             case R.id.navset:
                 selectset();
-                getSupportFragmentManager().beginTransaction()
-                        .hide(homeFragment)
-                        .hide(categoryFragment)
-                        .show(setFragment)
-                        .commit();
-                toptitle.setText("设置");
                 return;
         }
     }
@@ -106,16 +108,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         clearall();
         navhomeimg.setBackgroundResource(R.drawable.homecheck);
         navhomet.setTextColor(Color.parseColor("#1296db"));
+        getSupportFragmentManager().beginTransaction()
+                .show(homeFragment)
+                .hide(categoryFragment)
+                .hide(setFragment)
+                .commit();
+        toptitle.setText("首页");
     }
     private void selectcat(){
         clearall();
         navcatimg.setBackgroundResource(R.drawable.categorycheck);
         navcatt.setTextColor(Color.parseColor("#38a3ff"));
+        getSupportFragmentManager().beginTransaction()
+                .hide(homeFragment)
+                .show(categoryFragment)
+                .hide(setFragment)
+                .commit();
+        toptitle.setText("分类");
     }
     private void selectset(){
         clearall();
         navsetimg.setBackgroundResource(R.drawable.setcheck);
         navsett.setTextColor(Color.parseColor("#1296db"));
+        getSupportFragmentManager().beginTransaction()
+                .hide(homeFragment)
+                .hide(categoryFragment)
+                .show(setFragment)
+                .commit();
+        toptitle.setText("设置");
     }
 
 }
