@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".viewlayer.activity.MainActivity">
+    tools:context=".viewlayer.activity.MainActivity"
+    android:fitsSystemWindows="true">
 
     <View
         android:id="@+id/miana"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_alignParentTop="true"
-        android:background="@color/black"
+        android:background="@color/home"
         />
     <RelativeLayout
         android:id="@+id/top"
