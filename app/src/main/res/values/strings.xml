@@ -3,4 +3,9 @@
     <string name="home">首页</string>
     <string name="category">分类</string>
     <string name="set">设置</string>
+    <string name="zfzc">政府政策</string>
+    <string name="bmxx">便民信息</string>
+    <string name="grjz">个人兼职</string>
+    <string name="sjgg">商家广告</string>
+    <string name="gygg">公益广告</string>
 </resources>
