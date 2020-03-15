@@ -13,7 +13,6 @@ import com.example.xiangzhentong.R;
 import com.example.xiangzhentong.viewlayer.fragment.CategoryFragment;
 import com.example.xiangzhentong.viewlayer.fragment.HomeFragment;
 import com.example.xiangzhentong.viewlayer.fragment.SetFragment;
-import com.gyf.immersionbar.ImmersionBar;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -67,9 +66,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         View navset = findViewById(R.id.navset);
         navset.setOnClickListener(MainActivity.this);
         initfragment(butposiotion);
-        ImmersionBar.with(this)
-                .statusBarColor(R.color.home)
-                .init();
     }
     public void initfragment(String butposiotion){
         switch (butposiotion){
