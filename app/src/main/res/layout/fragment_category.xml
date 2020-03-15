@@ -9,6 +9,7 @@
     android:id="@+id/navcatcontainer">
 
     <LinearLayout
+        android:id="@+id/cattop"
         android:layout_width="match_parent"
         android:layout_height="160dp"
         android:layout_alignParentTop="true"
@@ -29,8 +30,14 @@
                 android:text="@string/zfzc"
                 android:textSize="16sp"
                 android:textColor="@color/white"/>
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="85dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:src="@drawable/zfzc"
+                />
         </LinearLayout>
-
         <LinearLayout
             android:id="@+id/bianminxinxi"
             android:layout_width="80dp"
@@ -38,7 +45,6 @@
             android:layout_weight="1"
             android:background="@drawable/zfbm"
             android:orientation="vertical">
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -47,15 +53,32 @@
                 android:text="@string/bmxx"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
-
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="85dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:src="@drawable/bmxx"
+                />
         </LinearLayout>
     </LinearLayout>
     <RelativeLayout
         android:id="@+id/gerenjianzhi"
         android:layout_width="match_parent"
-        android:layout_height="90dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/cattop"
         android:layout_centerInParent="true"
         android:background="@drawable/jz">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="85dp"
+            android:layout_marginStart="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/grjz"
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -67,6 +90,7 @@
             android:layout_centerVertical="true"/>
     </RelativeLayout>
     <LinearLayout
+        android:layout_below="@id/gerenjianzhi"
         android:layout_width="match_parent"
         android:layout_height="160dp"
         android:layout_alignParentBottom="true"
@@ -87,7 +111,13 @@
                 android:text="@string/sjgg"
                 android:textSize="16sp"
                 android:textColor="@color/white"/>
-
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="85dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:src="@drawable/sjgg"
+                />
         </LinearLayout>
         <LinearLayout
             android:id="@+id/gongyiguanggao"
@@ -104,7 +134,13 @@
                 android:text="@string/gygg"
                 android:textSize="16sp"
                 android:textColor="@color/white"/>
-
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="85dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:src="@drawable/gygg"
+                />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
