@@ -4,12 +4,13 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
+import android.webkit.WebView;
 
 import com.example.xiangzhentong.R;
 
 public class ZhenfuzhenceActivity extends AppCompatActivity {
 
+    private WebView webView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,10 +18,6 @@ public class ZhenfuzhenceActivity extends AppCompatActivity {
         initview();
     }
     public void initview(){
-        View topbarview = findViewById(R.id.fenleitop);
-        topbarview.setBackgroundResource(R.color.home);
-        TextView topbartext = findViewById(R.id.fenleitoptext);
-        topbartext.setText(R.string.zfzclue);
         View topbarbut = findViewById(R.id.fenleiback);
         topbarbut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +28,11 @@ public class ZhenfuzhenceActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        initweb();
+    }
+    public void initweb(){
+        webView = (WebView)findViewById(R.id.zfzcweb);
+        webView.loadUrl("file:////android_asset/zfzclue.html");
+        webView.getSettings().setJavaScriptEnabled(true);
     }
 }
