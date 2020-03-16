@@ -1,12 +1,12 @@
 .yuanjiao{
     width: 340px;
-    height: 130px;
+    height: 120px;
     border:1px solid white;
     background-color: white;
     border-radius: 10px / 10px;
 }
 .zongbeijing{
-    background-color: gray;
+    background-color: #ebebeb;
 }
 .wenzitop{
     text-align:center;

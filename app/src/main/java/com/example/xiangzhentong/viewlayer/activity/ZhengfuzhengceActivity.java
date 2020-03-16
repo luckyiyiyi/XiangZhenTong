@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
+import android.widget.TextView;
 
 import com.example.xiangzhentong.R;
 
@@ -17,6 +18,8 @@ public class ZhengfuzhengceActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zhengfuzhengce);
+        TextView zfzctop = findViewById(R.id.fenleitoptext);
+        zfzctop.setText(R.string.zfzcluetop);
         View topbarbut = findViewById(R.id.fenleiback);
         topbarbut.setOnClickListener(new View.OnClickListener() {
             @Override
