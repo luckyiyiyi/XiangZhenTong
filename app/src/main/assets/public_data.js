@@ -37,5 +37,21 @@ let public_data = [
 
 
 ];
-
-module.exports = { public_data };
+function setDiv(item){
+        var div = '<div class="yuanjiao"><div class="body-no-list-header" ><div class="body-no-list-header-title">'
+    + item.publicTitle
+    + '</div><div class="body-no-list-header-txt">'
+    + item.publicText
+    + '<br>'
+    + item.image
+    + '</div></div></div><br>'
+return div
+}
+function creatediv(){
+    var html='';
+    for(var i=0;i<public_data.length;i++){
+        html+=setDiv(public_data[i]);
+    }
+    document.getElementById('zfzcl').innerHTML=html;
+}
+window.onload=creatediv;
