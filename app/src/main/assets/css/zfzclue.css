@@ -1,0 +1,32 @@
+.yuanjiao{
+    width: 340px;
+    height: 130px;
+    border:1px solid white;
+    background-color: white;
+    border-radius: 10px / 10px;
+}
+.zongbeijing{
+    background-color: gray;
+}
+.wenzitop{
+    text-align:center;
+    height:15px;
+    font-size:19px;
+    font-weight:bold;
+}
+.wenzicontent{
+    font-size:10px;
+}
+.wenzicontentb{
+    float:left;
+    margin-left:15px;
+    width:60%;
+}
+.contentimg{
+    float:right;
+    width:30%;
+}
+.contentimgtu{
+    width:80px;
+    height:60px;
+}

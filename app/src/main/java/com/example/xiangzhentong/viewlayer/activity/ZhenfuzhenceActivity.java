@@ -32,7 +32,7 @@ public class ZhenfuzhenceActivity extends AppCompatActivity {
     }
     public void initweb(){
         webView = (WebView)findViewById(R.id.zfzcweb);
-        webView.loadUrl("file:////android_asset/zfzclue.html");
+        webView.loadUrl("file:////android_asset/html/zfzclue.html");
         webView.getSettings().setJavaScriptEnabled(true);
     }
 }

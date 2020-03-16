@@ -38,13 +38,13 @@ let public_data = [
 
 ];
 function setDiv(item){
-        var div = '<div class="yuanjiao"><div class="body-no-list-header" ><div class="body-no-list-header-title">'
+        var div = '<div class="yuanjiao"><div><p class="wenzitop" >'
     + item.publicTitle
-    + '</div><div class="body-no-list-header-txt">'
+    + '</p></div><div><div class="wenzicontentb"><p class="wenzicontent">'
     + item.publicText
-    + '<br>'
+    + '</p></div><div class="contentimg"><img class="contentimgtu" src="'
     + item.image
-    + '</div></div></div><br>'
+    + '"/></div></div></div><br>'
 return div
 }
 function creatediv(){
