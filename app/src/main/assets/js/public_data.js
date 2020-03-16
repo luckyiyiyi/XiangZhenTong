@@ -49,13 +49,21 @@ return div
 }
 function creatediv(){
     var html='';
-    var zfzcdiv=document.getElementById('zfzcl');
     for(var i=0;i<public_data.length;i++){
         html+=setDiv(public_data[i]);
     }
-    zfzcdiv.innerHTML=html;
-    zfzcdiv.onclick=function(){
-        window.zfzc.intenttozfzcxx(public_data[1].postId);
+    document.getElementById('zfzcl').innerHTML=html;
+    divnum(public_data)
+}
+function divnum(public_data){
+    var public_data = public_data;
+    var divarry = document.getElementsByClassName('yuanjiao');
+    for(var i=0;i<divarry.length;i++){
+        divarry[i].onclick=(function close(j){
+            return function(){
+                window.zfzc.intenttozfzcxx(public_data[j].postId);
+            }
+        })(i);
     }
 }
 window.onload=creatediv;

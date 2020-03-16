@@ -9,7 +9,7 @@
         android:roundIcon="@drawable/tong"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoBar">
-        <activity android:name=".ZhengduzhengcexiangxiActivity">
+        <activity android:name=".viewlayer.activity.ZhengduzhengcexiangxiActivity">
             <intent-filter>
                 <action android:name="zfzcltx"/>
                 <category android:name="android.intent.category.DEFAULT"/>
