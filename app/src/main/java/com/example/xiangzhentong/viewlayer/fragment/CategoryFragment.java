@@ -13,7 +13,7 @@ import com.example.xiangzhentong.viewlayer.activity.BianminxinxiActivity;
 import com.example.xiangzhentong.viewlayer.activity.GerenjianzhiActivity;
 import com.example.xiangzhentong.viewlayer.activity.GongyiguanggaoActivity;
 import com.example.xiangzhentong.viewlayer.activity.ShangjiaguanggaoActivity;
-import com.example.xiangzhentong.viewlayer.activity.ZhenfuzhenceActivity;
+import com.example.xiangzhentong.viewlayer.activity.ZhengfuzhengceActivity;
 
 public class CategoryFragment extends Fragment{
 
@@ -31,7 +31,7 @@ public class CategoryFragment extends Fragment{
         zfzcview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent zfzcintent = new Intent(activity, ZhenfuzhenceActivity.class);
+                Intent zfzcintent = new Intent(activity, ZhengfuzhengceActivity.class);
                 startActivity(zfzcintent);
             }
         });

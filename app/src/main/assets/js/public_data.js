@@ -49,9 +49,13 @@ return div
 }
 function creatediv(){
     var html='';
+    var zfzcdiv=document.getElementById('zfzcl');
     for(var i=0;i<public_data.length;i++){
         html+=setDiv(public_data[i]);
     }
-    document.getElementById('zfzcl').innerHTML=html;
+    zfzcdiv.innerHTML=html;
+    zfzcdiv.onclick=function(){
+        window.zfzc.intenttozfzcxx(public_data[1].postId);
+    }
 }
 window.onload=creatediv;

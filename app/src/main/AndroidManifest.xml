@@ -9,11 +9,17 @@
         android:roundIcon="@drawable/tong"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoBar">
-        <activity android:name=".viewlayer.activity.GongyiguanggaoActivity"></activity>
+        <activity android:name=".ZhengduzhengcexiangxiActivity">
+            <intent-filter>
+                <action android:name="zfzcltx"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".viewlayer.activity.GongyiguanggaoActivity" />
         <activity android:name=".viewlayer.activity.ShangjiaguanggaoActivity" />
         <activity android:name=".viewlayer.activity.GerenjianzhiActivity" />
         <activity android:name=".viewlayer.activity.BianminxinxiActivity" />
-        <activity android:name=".viewlayer.activity.ZhenfuzhenceActivity" />
+        <activity android:name=".viewlayer.activity.ZhengfuzhengceActivity" />
         <activity android:name=".viewlayer.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
