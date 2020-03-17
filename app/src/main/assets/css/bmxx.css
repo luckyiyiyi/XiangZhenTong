@@ -1,0 +1,82 @@
+.zongbeijing{
+    background-color: #ebebeb;
+    margin-left:-1px;
+    margin-right:-1px;
+    margin-bottom:-10px;
+}
+.anniuc{
+    float:right;
+    width: 70px;
+    height: 50px;
+    border-radius: 10px 10px 0px 0px;
+    text-align:center;
+}
+.anniud{
+    float:left;
+    width: 70px;
+    height: 50px;
+    border-radius: 10px 10px 0px 0px;
+    margin-left:12px;
+    text-align:center;
+}
+.anniuh{
+    float:right;
+    width: 70px;
+    height: 50px;
+    border-radius: 10px 10px 0px 0px;
+    margin-right:12px;
+    text-align:center;
+}
+.anniuq{
+    float:left;
+    width: 70px;
+    height: 50px;
+    border-radius: 10px 10px 0px 0px;
+    text-align:center;
+}
+.toptext{
+    margin-top:13px;
+    font-size:21px;
+}
+.cheliangbiao{
+    margin-top:10px;
+    margin-bottom:40px;
+    float:left;
+    width:25%;
+    height: 50px;
+}
+.dianhuaben{
+    margin-top:10px;
+    margin-bottom:40px;
+    float:left;
+    width:25%;
+    height: 50px;
+}
+.huodong{
+    margin-top:10px;
+    margin-bottom:40px;
+    float:left;
+    width:25%;
+    height: 50px;
+}
+.qita{
+    margin-top:10px;
+    margin-bottom:40px;
+    float:left;
+    width:25%;
+    height: 50px;
+}
+.bar{
+    width:100%;
+    height:3px;
+}
+.content{
+    margin-top:57px;
+    background-color: #4472ca;
+    padding-left:20px;
+}
+.text{
+    font-size:19px;
+    margin-bottom:-10px;
+    color:#ffffff;
+}
