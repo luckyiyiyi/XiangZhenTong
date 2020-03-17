@@ -1,0 +1,31 @@
+.title{
+    margin-top:-10px;
+    margin-bottom:-1px;
+    font-size:25px;
+}
+.contentimg{
+    text-align:center;
+}
+.img{
+    width:335px;
+    height:210px;
+}
+.category{
+    margin-top:-4px;
+    margin-left:6px;
+    font-size:18px;
+}
+.contact{
+    margin-top:-22px;
+    margin-left:6px;
+    font-size:18px;
+}
+.address{
+    margin-top:-22px;
+    margin-left:6px;
+    font-size:18px;
+}
+.text{
+    margin-left:6px;
+    font-size:18px;
+}

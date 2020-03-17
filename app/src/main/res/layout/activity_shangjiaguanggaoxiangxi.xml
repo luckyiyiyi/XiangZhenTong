@@ -5,8 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".viewlayer.activity.ShangjiaguanggaoxiangxiActivity">
-<TextView
-    android:id="@+id/sjjj"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    <include
+        android:id="@+id/sjggxxtop"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        layout="@layout/topbarsjgg"
+        />
+    <WebView
+        android:id="@+id/sjggxxweb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/sjggxxtop"/>
 </RelativeLayout>
