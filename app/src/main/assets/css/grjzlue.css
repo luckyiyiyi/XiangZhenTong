@@ -1,0 +1,62 @@
+.yuanjiao{
+    width: 340px;
+    height: 80px;
+    border:1px solid white;
+    background-color: white;
+    border-radius: 10px / 10px;
+}
+.neirong{
+    float:left;
+    width:70%;
+}
+.shen{
+    float:right;
+    width:20%;
+    height: 40px;
+    margin-right:10px;
+    margin-top:18px;
+    border:1px solid #f96647;
+    background-color: #f96647;
+    border-radius: 10px / 10px;
+}
+.shenzi{
+    text-align:center;
+    margin-top:-0.1px;
+    color:#ffffff;
+    font-size:24px;
+}
+.zongbeijing{
+    background-color: #ebebeb;
+}
+.grjztitlediv{
+    margin-top:-10px;
+    margin-left:10px;
+}
+.grjztitle{
+    height:15px;
+    font-size:20px;
+    font-weight:bold;
+}
+.moneypositiondiv{
+    margin-top:-17px;
+    margin-left:12px;
+    width: 240px;
+}
+.workmoneydiv{
+    float:left;
+    width:60%;
+}
+.workmoneycontent{
+    color:#fa8551;
+    font-size:17px;
+}
+.workPostiondiv{
+    float:right;
+    width:40%;
+}
+.workPostioncontent{
+    font-size:17px;
+}
+.bar{
+    height:5px;
+}

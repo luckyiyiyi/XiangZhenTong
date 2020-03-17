@@ -9,6 +9,13 @@
         android:roundIcon="@drawable/tong"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoBar">
+        <activity android:name=".viewlayer.activity.GerenjianzhixiangxiActivity">
+            <intent-filter>
+                <action android:name="grjzltx" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".viewlayer.activity.ZhengduzhengcexiangxiActivity">
             <intent-filter>
                 <action android:name="zfzcltx"/>
