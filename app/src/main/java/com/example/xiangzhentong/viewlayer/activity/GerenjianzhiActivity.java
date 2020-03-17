@@ -49,7 +49,7 @@ public class GerenjianzhiActivity extends AppCompatActivity {
         public void intenttogrjzxx(int id){
             Log.d("测试js调用了java",String.valueOf(id));
             Intent intent = new Intent();
-            intent.putExtra("position",String.valueOf(id));
+            intent.putExtra("grjzposition",String.valueOf(id));
             intent.setAction("grjzltx");
             startActivity(intent);
         }

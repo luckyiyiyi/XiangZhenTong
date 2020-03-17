@@ -1,0 +1,36 @@
+.worktitle{
+    margin-top:-5px;
+    margin-bottom:-18px;
+    font-size:19px;
+    font-weight:bold;
+}
+.workmoney{
+    margin-bottom:-19px;
+    color:#fa8551;
+    font-size:19px;
+}
+.workpostion{
+    margin-bottom:-17px;
+    font-size:15px;
+}
+.workneed{
+    margin-bottom:-17px;
+    font-size:15px;
+}
+.workaddress{
+    margin-bottom:35px;
+    font-size:15px;
+}
+.bar{
+    margin-left:-10px;
+    margin-right:-10px;
+    height:5px;
+    background-color: #ebebeb;
+}
+.zwms{
+    margin-bottom:-10px;
+    font-size:15px;
+}
+.workcontent{
+    font-size:15px;
+}

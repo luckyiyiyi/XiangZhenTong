@@ -31,7 +31,7 @@ public class ZhengduzhengcexiangxiActivity extends AppCompatActivity {
             }
         });
         Intent intentget=getIntent();
-        position = intentget.getStringExtra("position");
+        position = intentget.getStringExtra("zfzcposition");
         webView = (WebView)findViewById(R.id.zfzcxiangxiweb);
         webView.loadUrl("file:////android_asset/html/zfzcxx.html");
         webView.getSettings().setJavaScriptEnabled(true);

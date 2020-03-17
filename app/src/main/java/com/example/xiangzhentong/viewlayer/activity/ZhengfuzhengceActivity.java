@@ -40,7 +40,7 @@ public class ZhengfuzhengceActivity extends AppCompatActivity {
         public void intenttozfzcxx(int id){
             Log.d("测试js调用了java",String.valueOf(id));
             Intent intent = new Intent();
-            intent.putExtra("position",String.valueOf(id));
+            intent.putExtra("zfzcposition",String.valueOf(id));
             intent.setAction("zfzcltx");
             startActivity(intent);
         }
