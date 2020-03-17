@@ -1,0 +1,22 @@
+.yuanjiao{
+    height: 200px;
+    margin-left:-10px;
+    margin-right:-10px;
+    background-color: white;
+}
+.zongbeijing{
+    background-color: #ebebeb;
+}
+.sjggtitle{
+    margin-top:-0.1px;
+    margin-left:22px;
+    font-size:15px;
+}
+.sjggimgdiv{
+    text-align:center;
+}
+.sjggimg{
+    margin-top:-2px;
+    width:320px;
+    height:150px;
+}

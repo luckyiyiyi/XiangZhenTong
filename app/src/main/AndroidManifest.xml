@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.xiangzhentong">
+
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/tong"
@@ -9,6 +11,13 @@
         android:roundIcon="@drawable/tong"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoBar">
+        <activity android:name=".viewlayer.activity.ShangjiaguanggaoxiangxiActivity">
+            <intent-filter>
+                <action android:name="sjggltx" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".viewlayer.activity.GerenjianzhixiangxiActivity">
             <intent-filter>
                 <action android:name="grjzltx" />
@@ -18,8 +27,9 @@
         </activity>
         <activity android:name=".viewlayer.activity.ZhengduzhengcexiangxiActivity">
             <intent-filter>
-                <action android:name="zfzcltx"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="zfzcltx" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".viewlayer.activity.GongyiguanggaoActivity" />
