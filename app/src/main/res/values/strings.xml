@@ -15,4 +15,6 @@
     <string name="sjggluetop">商家广告</string>
     <string name="sjggxxtop">广告详情</string>
     <string name="gygg">公益广告</string>
+    <string name="gyggluetop">公益广告</string>
+    <string name="gyggxxtop">广告详情</string>
 </resources>

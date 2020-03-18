@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".viewlayer.activity.GongyiguanggaoActivity">
+    tools:context=".viewlayer.activity.GongyiguanggaoxiangxiActivity">
     <include
-        android:id="@+id/gyggtop"
+        android:id="@+id/gyggxxtop"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         layout="@layout/topbarsjgggygg"
         />
     <WebView
-        android:id="@+id/gyggweb"
+        android:id="@+id/gyggxxweb"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/gyggtop"/>
+        android:layout_below="@id/gyggxxtop"/>
 </RelativeLayout>

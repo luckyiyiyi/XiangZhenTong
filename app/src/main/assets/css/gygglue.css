@@ -1,0 +1,25 @@
+.yuanjiao{
+    height: 200px;
+    margin-left:-10px;
+    margin-right:-10px;
+    background-color: white;
+}
+.zongbeijing{
+    margin-top:-5px;
+    padding-top:0px;
+    background-color: #ebebeb;
+}
+.gyggtitle{
+    margin-top:6px;
+    margin-bottom:6px;
+    margin-left:22px;
+    font-size:19px;
+}
+.gyggimgdiv{
+    text-align:center;
+}
+.gyggimg{
+    margin-top:-2px;
+    width:320px;
+    height:150px;
+}

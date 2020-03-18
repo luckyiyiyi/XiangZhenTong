@@ -11,6 +11,13 @@
         android:roundIcon="@drawable/tong"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoBar">
+        <activity android:name=".viewlayer.activity.GongyiguanggaoxiangxiActivity">
+            <intent-filter>
+                <action android:name="gyggltx" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".viewlayer.activity.ShangjiaguanggaoxiangxiActivity">
             <intent-filter>
                 <action android:name="sjggltx" />

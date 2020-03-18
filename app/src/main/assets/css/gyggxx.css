@@ -1,0 +1,37 @@
+.zongbeijing{
+    margin-top:-5px;
+    margin-left:0px;
+    padding-top:0px;
+}
+.gyggurldiv{
+    text-align:center;
+}
+.gyggurl{
+    width:360px;
+    height:230px;
+}
+.bar{
+    margin-top:18px;
+    margin-left:35px;
+    width:360px;
+    height:3px;
+    background-color: #d4d3d3;
+}
+.gyggtitlediv{
+    margin-top:-8px;
+    text-align:center;
+    margin-left:-10px;
+    margin-right:-10px;
+}
+.gyggtitle{
+    margin-left:10px;
+    font-size:27px;
+}
+.gyggdetaildiv{
+    margin-top:-13px;
+    text-align:center;
+}
+.gyggdetail{
+    margin-left:10px;
+    font-size:17px;
+}

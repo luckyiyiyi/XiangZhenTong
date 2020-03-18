@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -14,13 +13,14 @@ import android.widget.TextView;
 
 import com.example.xiangzhentong.R;
 
-public class GongyiguanggaoActivity extends AppCompatActivity {
+public class GongyiguanggaoxiangxiActivity extends AppCompatActivity {
 
     private WebView webView;
+    private String position;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gongyiguanggao);
+        setContentView(R.layout.activity_gongyiguanggaoxiangxi);
         //调整状态栏颜色
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {//因为不是所有的系统都可以设置颜色的，在4.4以下就不可以。。有的说4.1，所以在设置的时候要检查一下系统版本是否是4.1以上
             Window window = getWindow();
@@ -28,30 +28,27 @@ public class GongyiguanggaoActivity extends AppCompatActivity {
             window.setStatusBarColor(getResources().getColor(R.color.guanggao));
         }
         TextView grjztop = findViewById(R.id.fenleitoptext);
-        grjztop.setText(R.string.gyggluetop);
+        grjztop.setText(R.string.gyggxxtop);
         View topbarbut = findViewById(R.id.fenleiback);
         topbarbut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(GongyiguanggaoActivity.this,MainActivity.class);
-                intent.putExtra("position","fenlei");
+                intent.setClass(GongyiguanggaoxiangxiActivity.this,GongyiguanggaoActivity.class);
                 startActivity(intent);
             }
         });
-        webView = (WebView)findViewById(R.id.gyggweb);
-        webView.loadUrl("file:////android_asset/html/gygglue.html");
+        Intent intent=getIntent();
+        position = intent.getStringExtra("gyggposition");
+        webView = (WebView)findViewById(R.id.gyggxxweb);
+        webView.loadUrl("file:////android_asset/html/gyggxx.html");
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.addJavascriptInterface(new JSgyggInterface(),"gygg");
+        webView.addJavascriptInterface(new gyggposition(),"gyggposition");
     }
-    class JSgyggInterface {
+    class gyggposition{
         @JavascriptInterface
-        public void intenttogyggxx(int id) {
-            Log.d("测试js调用了java", String.valueOf(id));
-            Intent intent = new Intent();
-            intent.putExtra("gyggposition", String.valueOf(id));
-            intent.setAction("gyggltx");
-            startActivity(intent);
+        public String gyggposition(){
+            return position;
         }
     }
 }
