@@ -33,10 +33,7 @@ public class ShangjiaguanggaoActivity extends AppCompatActivity {
         topbarbut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(ShangjiaguanggaoActivity.this,MainActivity.class);
-                intent.putExtra("position","fenlei");
-                startActivity(intent);
+                intentsjggl();
             }
         });
         webView = (WebView)findViewById(R.id.sjggweb);
@@ -52,6 +49,17 @@ public class ShangjiaguanggaoActivity extends AppCompatActivity {
             intent.putExtra("sjggposition",String.valueOf(id));
             intent.setAction("sjggltx");
             startActivity(intent);
+            finish();
         }
+    }
+    public void intentsjggl(){
+        Intent intent = new Intent();
+        intent.setClass(ShangjiaguanggaoActivity.this,MainActivity.class);
+        intent.putExtra("position","fenlei");
+        startActivity(intent);
+        finish();
+    }
+    public void onBackPressed(){
+        intentsjggl();
     }
 }

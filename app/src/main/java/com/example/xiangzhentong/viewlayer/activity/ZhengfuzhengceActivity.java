@@ -24,10 +24,7 @@ public class ZhengfuzhengceActivity extends AppCompatActivity {
         topbarbut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(ZhengfuzhengceActivity.this,MainActivity.class);
-                intent.putExtra("position","fenlei");
-                startActivity(intent);
+                intentzfzcl();
             }
         });
         webView = (WebView)findViewById(R.id.zfzcweb);
@@ -43,6 +40,17 @@ public class ZhengfuzhengceActivity extends AppCompatActivity {
             intent.putExtra("zfzcposition",String.valueOf(id));
             intent.setAction("zfzcltx");
             startActivity(intent);
+            finish();
         }
+    }
+    public void intentzfzcl(){
+        Intent intent = new Intent();
+        intent.setClass(ZhengfuzhengceActivity.this,MainActivity.class);
+        intent.putExtra("position","fenlei");
+        startActivity(intent);
+        finish();
+    }
+    public void onBackPressed(){
+        intentzfzcl();
     }
 }

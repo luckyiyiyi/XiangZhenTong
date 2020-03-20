@@ -33,9 +33,7 @@ public class GongyiguanggaoxiangxiActivity extends AppCompatActivity {
         topbarbut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(GongyiguanggaoxiangxiActivity.this,GongyiguanggaoActivity.class);
-                startActivity(intent);
+                intentgyggx();
             }
         });
         Intent intent=getIntent();
@@ -50,5 +48,14 @@ public class GongyiguanggaoxiangxiActivity extends AppCompatActivity {
         public String gyggposition(){
             return position;
         }
+    }
+    public void intentgyggx(){
+        Intent intent = new Intent();
+        intent.setClass(GongyiguanggaoxiangxiActivity.this,GongyiguanggaoActivity.class);
+        startActivity(intent);
+        finish();
+    }
+    public void onBackPressed(){
+        intentgyggx();
     }
 }

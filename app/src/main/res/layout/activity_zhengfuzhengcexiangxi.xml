@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".viewlayer.activity.ZhengduzhengcexiangxiActivity">
+    tools:context=".viewlayer.activity.ZhengfuzhengcexiangxiActivity">
     <include
         android:id="@+id/zfzcxiangxitop"
         android:layout_width="match_parent"

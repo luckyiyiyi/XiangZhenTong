@@ -25,7 +25,7 @@ public class GerenjianzhixiangxiActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {//因为不是所有的系统都可以设置颜色的，在4.4以下就不可以。。有的说4.1，所以在设置的时候要检查一下系统版本是否是4.1以上
             Window window = getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(getResources().getColor(R.color.guanggao));
+            window.setStatusBarColor(getResources().getColor(R.color.jianzhi));
         }
         TextView zfzctop = findViewById(R.id.fenleitoptext);
         zfzctop.setText(R.string.grjzxxtop);
@@ -33,9 +33,7 @@ public class GerenjianzhixiangxiActivity extends AppCompatActivity {
         topbarbut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(GerenjianzhixiangxiActivity.this,GerenjianzhiActivity.class);
-                startActivity(intent);
+                intentgrjzx();
             }
         });
         Intent intent = getIntent();
@@ -50,5 +48,14 @@ public class GerenjianzhixiangxiActivity extends AppCompatActivity {
         public String grjzposition(){
             return position;
         }
+    }
+    public void intentgrjzx(){
+        Intent intent = new Intent();
+        intent.setClass(GerenjianzhixiangxiActivity.this,GerenjianzhiActivity.class);
+        startActivity(intent);
+        finish();
+    }
+    public void onBackPressed(){
+        intentgrjzx();
     }
 }

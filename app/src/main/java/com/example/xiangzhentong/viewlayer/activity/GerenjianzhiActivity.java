@@ -33,10 +33,7 @@ public class GerenjianzhiActivity extends AppCompatActivity {
         topbarbut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(GerenjianzhiActivity.this,MainActivity.class);
-                intent.putExtra("position","fenlei");
-                startActivity(intent);
+                intentgrjzl();
             }
         });
         webView = (WebView)findViewById(R.id.grjzweb);
@@ -52,6 +49,17 @@ public class GerenjianzhiActivity extends AppCompatActivity {
             intent.putExtra("grjzposition",String.valueOf(id));
             intent.setAction("grjzltx");
             startActivity(intent);
+            finish();
         }
+    }
+    public void intentgrjzl(){
+        Intent intent = new Intent();
+        intent.setClass(GerenjianzhiActivity.this,MainActivity.class);
+        intent.putExtra("position","fenlei");
+        startActivity(intent);
+        finish();
+    }
+    public void onBackPressed(){
+        intentgrjzl();
     }
 }

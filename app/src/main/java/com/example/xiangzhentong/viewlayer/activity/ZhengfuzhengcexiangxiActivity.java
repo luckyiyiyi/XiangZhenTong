@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.example.xiangzhentong.R;
 
-public class ZhengduzhengcexiangxiActivity extends AppCompatActivity {
+public class ZhengfuzhengcexiangxiActivity extends AppCompatActivity {
 
     private WebView webView;
     private String position;
@@ -25,9 +25,7 @@ public class ZhengduzhengcexiangxiActivity extends AppCompatActivity {
         topbarbut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(ZhengduzhengcexiangxiActivity.this,ZhengfuzhengceActivity.class);
-                startActivity(intent);
+                intentzfzcx();
             }
         });
         Intent intentget=getIntent();
@@ -42,5 +40,14 @@ public class ZhengduzhengcexiangxiActivity extends AppCompatActivity {
         public String zfzcposition(){
             return position;
         }
+    }
+    public void intentzfzcx(){
+        Intent intent = new Intent();
+        intent.setClass(ZhengfuzhengcexiangxiActivity.this,ZhengfuzhengceActivity.class);
+        startActivity(intent);
+        finish();
+    }
+    public void onBackPressed(){
+        intentzfzcx();
     }
 }

@@ -33,6 +33,7 @@ public class CategoryFragment extends Fragment{
             public void onClick(View v) {
                 Intent zfzcintent = new Intent(activity, ZhengfuzhengceActivity.class);
                 startActivity(zfzcintent);
+                activity.finish();
             }
         });
         View bmxxview = view.findViewById(R.id.bianminxinxi);
@@ -41,6 +42,7 @@ public class CategoryFragment extends Fragment{
             public void onClick(View v) {
                 Intent bmxxintent = new Intent(activity, BianminxinxiActivity.class);
                 startActivity(bmxxintent);
+                activity.finish();
             }
         });
         View grjzview = view.findViewById(R.id.gerenjianzhi);
@@ -49,6 +51,7 @@ public class CategoryFragment extends Fragment{
             public void onClick(View v) {
                 Intent grjzintent = new Intent(activity, GerenjianzhiActivity.class);
                 startActivity(grjzintent);
+                activity.finish();
             }
         });
         View sjggview = view.findViewById(R.id.shangjiaguanggao);
@@ -57,6 +60,7 @@ public class CategoryFragment extends Fragment{
             public void onClick(View v) {
                 Intent sjggintent = new Intent(activity, ShangjiaguanggaoActivity.class);
                 startActivity(sjggintent);
+                activity.finish();
             }
         });
         View gyggview = view.findViewById(R.id.gongyiguanggao);
@@ -64,7 +68,9 @@ public class CategoryFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 Intent gyggintent = new Intent(activity, GongyiguanggaoActivity.class);
-                startActivity(gyggintent);            }
+                startActivity(gyggintent);
+                activity.finish();
+            }
         });
     }
 

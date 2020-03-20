@@ -33,10 +33,7 @@ public class GongyiguanggaoActivity extends AppCompatActivity {
         topbarbut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(GongyiguanggaoActivity.this,MainActivity.class);
-                intent.putExtra("position","fenlei");
-                startActivity(intent);
+                intentgyggl();
             }
         });
         webView = (WebView)findViewById(R.id.gyggweb);
@@ -52,6 +49,17 @@ public class GongyiguanggaoActivity extends AppCompatActivity {
             intent.putExtra("gyggposition", String.valueOf(id));
             intent.setAction("gyggltx");
             startActivity(intent);
+            finish();
         }
+    }
+    public void intentgyggl(){
+        Intent intent = new Intent();
+        intent.setClass(GongyiguanggaoActivity.this,MainActivity.class);
+        intent.putExtra("position","fenlei");
+        startActivity(intent);
+        finish();
+    }
+    public void onBackPressed(){
+        intentgyggl();
     }
 }

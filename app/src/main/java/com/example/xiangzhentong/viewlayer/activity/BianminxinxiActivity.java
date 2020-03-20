@@ -22,14 +22,21 @@ public class BianminxinxiActivity extends AppCompatActivity {
         topbarbut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(BianminxinxiActivity.this,MainActivity.class);
-                intent.putExtra("position","fenlei");
-                startActivity(intent);
+                intentbmxx();
             }
         });
         webView = (WebView)findViewById(R.id.bmxxweb);
         webView.loadUrl("file:////android_asset/html/bmxx.html");
         webView.getSettings().setJavaScriptEnabled(true);
+    }
+    public void intentbmxx(){
+        Intent intent = new Intent();
+        intent.setClass(BianminxinxiActivity.this,MainActivity.class);
+        intent.putExtra("position","fenlei");
+        startActivity(intent);
+        finish();
+    }
+    public void onBackPressed(){
+        intentbmxx();
     }
 }
