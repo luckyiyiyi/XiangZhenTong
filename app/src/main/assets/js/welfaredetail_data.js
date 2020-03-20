@@ -1,6 +1,7 @@
 let welfaredetail_data = [
   {
-    welfareimage: 'https://s2.ax1x.com/2019/09/05/nui4aT.png',url:'http://vod.cntv.lxdns.com/flash/mp4video62/TMS/2019/05/24/f42984f4041ba4329d99f95e9800871b_450_h264_418_aac_32.mp4',
+    welfareimage: 'https://s2.ax1x.com/2019/09/05/nui4aT.png',
+    url:'http://vod.cntv.lxdns.com/flash/mp4video62/TMS/2019/05/24/f42984f4041ba4329d99f95e9800871b_450_h264_418_aac_32.mp4',
     title:'老英雄张富清',
     detail:'老英雄张富清60多年深藏功名，一辈子坚守初心、不改本色，事迹感人。在部队，他保家卫国；到地方，他为民造福。他用自己的朴实纯粹、淡泊名利书写了精彩人生，是广大部队官兵和退役军人学习的榜样。要积极弘扬奉献精神，凝聚起万众一心奋斗新时代的强大力量。',
     postId: 0,
@@ -43,9 +44,7 @@ let welfaredetail_data = [
 ];
 
 function setDiv(item){
-      var div = '<div><div class="gyggurldiv"><img class="gyggurl" src="'
-  + item.welfareimage
-  + '"/></div><div class="bar"></div><div class="gyggtitlediv"><p class="gyggtitle">'
+  var div = '<div><div class="bar"></div><div class="gyggtitlediv"><p class="gyggtitle">'
   + item.title
   + '</p></div><div class="gyggdetaildiv"><p class="gyggdetail">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp简介：'
   + item.detail
