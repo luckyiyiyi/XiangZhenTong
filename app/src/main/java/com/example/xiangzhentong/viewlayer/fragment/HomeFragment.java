@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.example.xiangzhentong.R;
 import com.example.xiangzhentong.adapter.LoopViewAdapter;
@@ -25,7 +24,6 @@ public class HomeFragment extends Fragment {
     private String[] mDec;
     private ArrayList<ImageView> mImgList;
     private LinearLayout ll_dots_container;
-    private TextView loop_dec;
     private int previousSelectedPosition = 0;
     boolean isRunning = false;
     private Activity activity;
@@ -48,22 +46,13 @@ public class HomeFragment extends Fragment {
     private void initLoopView(){
         viewPager = (ViewPager)ThisView.findViewById(R.id.loopviewpager);
         ll_dots_container = (LinearLayout)ThisView.findViewById(R.id.ll_dots_loop);
-        loop_dec = (TextView)ThisView.findViewById(R.id.loop_dec);
 
         // 图片资源id数组
         mImg = new int[]{
-                R.drawable.test,
-                R.drawable.test,
-                R.drawable.test,
-                R.drawable.test
-        };
-
-        // 文本描述
-        mDec = new String[]{
-                "Test1",
-                "Test2",
-                "Test3",
-                "Test4"
+                R.drawable.lunbo1,
+                R.drawable.lunbo2,
+                R.drawable.lunbo3,
+                R.drawable.lunbo4
         };
 
         mImg_id = new int[]{
@@ -88,7 +77,7 @@ public class HomeFragment extends Fragment {
             //加引导点
             dotView = new View(this.getContext());
             dotView.setBackgroundResource(R.drawable.dot);
-            layoutParams = new LinearLayout.LayoutParams(10,10);
+            layoutParams = new LinearLayout.LayoutParams(40,40);
             if(i!=0){
                 layoutParams.leftMargin=10;
             }
@@ -98,7 +87,6 @@ public class HomeFragment extends Fragment {
         }
 
         ll_dots_container.getChildAt(0).setEnabled(true);
-        loop_dec.setText(mDec[0]);
         previousSelectedPosition=0;
         //设置适配器
         viewPager.setAdapter(new LoopViewAdapter(mImgList));
@@ -116,7 +104,6 @@ public class HomeFragment extends Fragment {
             @Override
             public void onPageSelected(int i) {
                 int newPosition = i % mImgList.size();
-                loop_dec.setText(mDec[newPosition]);
                 ll_dots_container.getChildAt(previousSelectedPosition).setEnabled(false);
                 ll_dots_container.getChildAt(newPosition).setEnabled(true);
                 previousSelectedPosition = newPosition;
