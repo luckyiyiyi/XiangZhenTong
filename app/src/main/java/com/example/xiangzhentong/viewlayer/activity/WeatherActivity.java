@@ -1,6 +1,7 @@
 package com.example.xiangzhentong.viewlayer.activity;
 
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -43,6 +44,8 @@ public class WeatherActivity extends AppCompatActivity {
     private ScrollView weatherLayout;
 
     private Button navButton;
+
+    private Button home;
 
     private TextView titleCity;
 
@@ -93,6 +96,7 @@ public class WeatherActivity extends AppCompatActivity {
         swipeRefresh.setColorSchemeResources(R.color.colorPrimary);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navButton = (Button) findViewById(R.id.nav_button);
+        home = (Button)findViewById(R.id.weahome);
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         String weatherString = prefs.getString("weather", null);
         final String weatherId;
@@ -125,6 +129,15 @@ public class WeatherActivity extends AppCompatActivity {
         } else {
             loadBingPic();
         }
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(WeatherActivity.this,MainActivity.class);
+                intent.putExtra("position","home");
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     /**

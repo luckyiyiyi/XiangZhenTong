@@ -24,7 +24,7 @@ public class Main2Activity extends AppCompatActivity {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         if (prefs.getString("weather", null) != null) {
             Log.d("城市id",prefs.getString("weather", null));
-            Intent intent = new Intent(this, WeatherActivity.class);
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             finish();
         }

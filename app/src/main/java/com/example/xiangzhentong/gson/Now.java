@@ -10,6 +10,9 @@ public class Now {
     @SerializedName("cond")
     public More more;
 
+    @SerializedName("wind_dir")
+    public String wind;
+
     public class More {
 
         @SerializedName("txt")

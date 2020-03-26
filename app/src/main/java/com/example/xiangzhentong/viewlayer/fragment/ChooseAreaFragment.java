@@ -24,6 +24,7 @@ import com.example.xiangzhentong.model.Province;
 import com.example.xiangzhentong.util.HttpUtil;
 import com.example.xiangzhentong.util.Utility;
 import com.example.xiangzhentong.viewlayer.activity.Main2Activity;
+import com.example.xiangzhentong.viewlayer.activity.MainActivity;
 import com.example.xiangzhentong.viewlayer.activity.WeatherActivity;
 
 import org.litepal.crud.DataSupport;
