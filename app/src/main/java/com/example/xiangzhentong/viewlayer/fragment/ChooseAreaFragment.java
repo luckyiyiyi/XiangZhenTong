@@ -23,6 +23,7 @@ import com.example.xiangzhentong.model.County;
 import com.example.xiangzhentong.model.Province;
 import com.example.xiangzhentong.util.HttpUtil;
 import com.example.xiangzhentong.util.Utility;
+import com.example.xiangzhentong.viewlayer.activity.Main2Activity;
 import com.example.xiangzhentong.viewlayer.activity.WeatherActivity;
 
 import org.litepal.crud.DataSupport;
@@ -35,6 +36,8 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 public class ChooseAreaFragment extends Fragment {
+
+    private static final String TAG = "ChooseAreaFragment";
 
     public static final int LEVEL_PROVINCE = 0;
 
@@ -110,10 +113,18 @@ public class ChooseAreaFragment extends Fragment {
                     selectedCity = cityList.get(position);
                     queryCounties();
                 } else if (currentLevel == LEVEL_COUNTY) {
-                    Intent intent = new Intent(getActivity(), WeatherActivity.class);
-                    intent.putExtra("weather_id", countyList.get(position).getWeatherId());
-                    startActivity(intent);
-                    getActivity().finish();
+                    String weatherId = countyList.get(position).getWeatherId();
+                    if (getActivity() instanceof Main2Activity) {
+                        Intent intent = new Intent(getActivity(), WeatherActivity.class);
+                        intent.putExtra("weather_id", countyList.get(position).getWeatherId());
+                        startActivity(intent);
+                        getActivity().finish();
+                    } else if (getActivity() instanceof WeatherActivity) {
+                        WeatherActivity activity = (WeatherActivity) getActivity();
+                        activity.drawerLayout.closeDrawers();
+                        activity.swipeRefresh.setRefreshing(true);
+                        activity.requestWeather(weatherId);
+                    }
                 }
             }
         });
