@@ -1,5 +1,6 @@
 package com.example.xiangzhentong.viewlayer.fragment;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 
 
@@ -22,6 +23,7 @@ import com.example.xiangzhentong.model.County;
 import com.example.xiangzhentong.model.Province;
 import com.example.xiangzhentong.util.HttpUtil;
 import com.example.xiangzhentong.util.Utility;
+import com.example.xiangzhentong.viewlayer.activity.WeatherActivity;
 
 import org.litepal.crud.DataSupport;
 
@@ -107,6 +109,11 @@ public class ChooseAreaFragment extends Fragment {
                 } else if (currentLevel == LEVEL_CITY) {
                     selectedCity = cityList.get(position);
                     queryCounties();
+                } else if (currentLevel == LEVEL_COUNTY) {
+                    Intent intent = new Intent(getActivity(), WeatherActivity.class);
+                    intent.putExtra("weather_id", countyList.get(position).getWeatherId());
+                    startActivity(intent);
+                    getActivity().finish();
                 }
             }
         });

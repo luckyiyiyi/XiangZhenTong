@@ -2,9 +2,11 @@ package com.example.xiangzhentong.util;
 
 import android.text.TextUtils;
 
+import com.example.xiangzhentong.gson.Weather;
 import com.example.xiangzhentong.model.City;
 import com.example.xiangzhentong.model.County;
 import com.example.xiangzhentong.model.Province;
+import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -78,6 +80,21 @@ public class Utility {
             }
         }
         return false;
+    }
+
+    /**
+     * 将返回的JSON数据解析成Weather实体类
+     */
+    public static Weather handleWeatherResponse(String response) {
+        try {
+            JSONObject jsonObject = new JSONObject(response);
+            JSONArray jsonArray = jsonObject.getJSONArray("HeWeather data service 3.0");
+            String weatherContent = jsonArray.getJSONObject(0).toString();
+            return new Gson().fromJson(weatherContent, Weather.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }
