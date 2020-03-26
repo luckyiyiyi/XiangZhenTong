@@ -7,6 +7,7 @@ import android.os.Build;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -102,7 +103,8 @@ public class WeatherActivity extends AppCompatActivity {
      * 根据天气id请求城市天气信息。
      */
     private void requestWeather(final String weatherId) {
-        String weatherUrl = "https://api.heweather.com/x3/weather?cityid=" + weatherId + "&key=bc0418b57b2d4918819d3974ac1285d9";
+        String weatherUrl = "http://guolin.tech/api/weather?cityid=" + weatherId + "&key=bc0418b57b2d4918819d3974ac1285d9";
+        Log.d("天气URL",weatherUrl);
         HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
@@ -115,6 +117,8 @@ public class WeatherActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         showWeatherInfo(weather);
+                        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(WeatherActivity.this);
+                        Log.d("城市id",prefs.getString("weather", null));
                     }
                 });
             }
