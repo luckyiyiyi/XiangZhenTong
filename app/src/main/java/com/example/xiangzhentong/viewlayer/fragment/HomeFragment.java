@@ -4,9 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +32,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 public class HomeFragment extends Fragment {
 
@@ -48,6 +51,9 @@ public class HomeFragment extends Fragment {
     private TextView stu;
     private TextView sugg;
     private LinearLayout forecastLayout;
+    public SwipeRefreshLayout refreshhome;
+    private View home;
+    private View tuisong;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
@@ -64,6 +70,7 @@ public class HomeFragment extends Fragment {
                 activity.finish();
             }
         });
+        initrefresh();
         return ThisView;
     }
 
@@ -72,7 +79,37 @@ public class HomeFragment extends Fragment {
 //        super.onViewCreated(view, saveInstanceState);
 //        this.containerView=view.findViewById(R.id.navhomecontainer);
 //    }
-
+    public void init(){
+        home.setVisibility(View.VISIBLE);
+        tuisong.setVisibility(View.GONE);
+    }
+    private void initrefresh(){
+        refreshhome = ThisView.findViewById(R.id.refresh_home);
+        refreshhome.setColorSchemeResources(R.color.home);
+        home = ThisView.findViewById(R.id.homere);
+        tuisong = ThisView.findViewById(R.id.tuisong);
+        home.setVisibility(View.VISIBLE);
+        tuisong.setVisibility(View.GONE);
+        refreshhome.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                if(home.getVisibility() == View.VISIBLE){
+                    home.setVisibility(View.GONE);
+                    tuisong.setVisibility(View.VISIBLE);
+                }else {
+                    int a = (int)((Math.random()*10));
+                    TextView te = (TextView)ThisView.findViewById(R.id.te);
+                    te.setText(String.valueOf(a));
+                }
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        refreshhome.setRefreshing(false);
+                    }
+                },1000);
+            }
+        });
+    }
     private void initweather(){
         city = (TextView)ThisView.findViewById(R.id.city);
         hweather = (TextView)ThisView.findViewById(R.id.weather);

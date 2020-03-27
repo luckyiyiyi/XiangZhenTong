@@ -93,7 +93,7 @@ public class WeatherActivity extends AppCompatActivity {
         carWashText = (TextView) findViewById(R.id.car_wash_text);
         sportText = (TextView) findViewById(R.id.sport_text);
         swipeRefresh = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
-        swipeRefresh.setColorSchemeResources(R.color.colorPrimary);
+        swipeRefresh.setColorSchemeResources(R.color.home);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navButton = (Button) findViewById(R.id.nav_button);
         home = (Button)findViewById(R.id.weahome);

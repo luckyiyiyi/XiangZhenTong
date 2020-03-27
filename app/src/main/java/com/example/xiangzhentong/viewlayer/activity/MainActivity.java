@@ -1,9 +1,11 @@
 package com.example.xiangzhentong.viewlayer.activity;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +18,8 @@ import com.example.xiangzhentong.R;
 import com.example.xiangzhentong.viewlayer.fragment.CategoryFragment;
 import com.example.xiangzhentong.viewlayer.fragment.HomeFragment;
 import com.example.xiangzhentong.viewlayer.fragment.SetFragment;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -91,10 +95,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 return;
         }
     }
+
     //底部导航切换页面
     public void onClick(View view){
         switch (view.getId()){
             case R.id.navhome:
+                if(homeFragment.isVisible()){
+                    Log.d("主页面显示：","HOME");
+
+                }
                 selecthome();
                 return;
             case R.id.navcategory:
