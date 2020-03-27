@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +24,11 @@ import com.example.xiangzhentong.util.Utility;
 import com.example.xiangzhentong.viewlayer.activity.MainActivity;
 import com.example.xiangzhentong.viewlayer.activity.WeatherActivity;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
@@ -77,22 +82,57 @@ public class HomeFragment extends Fragment {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(activity);
         String weatherString = prefs.getString("weather", null);
         Weather weather = Utility.handleWeatherResponse(weatherString);
+        String update = weather.basic.update.updateTime;
         if (weather != null && "ok".equals(weather.status))
-            city.setText(weather.basic.cityName);
+            city.setText(weather.basic.cityName+"("+ update.substring(0,10) +")"+dateToWeekZhou(update.substring(0,10)));
             hweather.setText(weather.now.temperature + "℃");
-            stu.setText(weather.now.more.info+"  "+weather.now.wind);
-            sugg.setText(weather.suggestion.sport.info);
+            stu.setText(weather.now.more.info+"      "+weather.now.wind+"      "+weather.now.windsc+"级风力");
+            sugg.setText("建议：" + weather.suggestion.sport.info);
         forecastLayout.removeAllViews();
         for (Forecast forecast : weather.forecastList) {
             View view = LayoutInflater.from(activity).inflate(R.layout.homeweatherforitem, forecastLayout, false);
             TextView dateText = (TextView) view.findViewById(R.id.day);
             TextView infoText = (TextView) view.findViewById(R.id.temp);
             TextView maxText = (TextView) view.findViewById(R.id.stu);
-            dateText.setText(forecast.date);
-            infoText.setText(forecast.temperature.max);
+            dateText.setText(dateToWeek(forecast.date));
+            infoText.setText(forecast.temperature.max+ "℃");
             maxText.setText(forecast.more.info);
             forecastLayout.addView(view);
         }
+        Log.d("更新时间：",update.substring(0,10));
+        Log.d("更新时间：",dateToWeek(update.substring(0,10)));
+    }
+    public static String dateToWeek(String datetime) {
+        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
+        String[] weekDays = { "星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六" };
+        Calendar cal = Calendar.getInstance(); // 获得一个日历
+        Date datet = null;
+        try {
+            datet = f.parse(datetime);
+            cal.setTime(datet);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        int w = cal.get(Calendar.DAY_OF_WEEK) - 1; // 指示一个星期中的某天。
+        if (w < 0)
+            w = 0;
+        return weekDays[w];
+    }
+    public static String dateToWeekZhou(String datetime) {
+        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
+        String[] weekDays = { "周日", "周一", "周二", "周三", "周四", "周五", "周六" };
+        Calendar cal = Calendar.getInstance(); // 获得一个日历
+        Date datet = null;
+        try {
+            datet = f.parse(datetime);
+            cal.setTime(datet);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        int w = cal.get(Calendar.DAY_OF_WEEK) - 1; // 指示一个星期中的某天。
+        if (w < 0)
+            w = 0;
+        return weekDays[w];
     }
     private void initLoopView(){
         viewPager = (ViewPager)ThisView.findViewById(R.id.loopviewpager);

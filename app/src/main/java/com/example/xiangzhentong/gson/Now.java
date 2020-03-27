@@ -12,6 +12,8 @@ public class Now {
 
     @SerializedName("wind_dir")
     public String wind;
+    @SerializedName("wind_sc")
+    public String windsc;
 
     public class More {
 
