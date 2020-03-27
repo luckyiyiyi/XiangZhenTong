@@ -95,14 +95,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 return;
         }
     }
-
+    private static RefreshHome mrefreshHome;
+    public interface RefreshHome{
+        void refresh();
+    }
+    public static void setRefreshHome(RefreshHome refreshHome){
+        mrefreshHome = refreshHome;
+    }
     //底部导航切换页面
     public void onClick(View view){
         switch (view.getId()){
             case R.id.navhome:
                 if(homeFragment.isVisible()){
                     Log.d("主页面显示：","HOME");
-
+                    if(mrefreshHome!=null)
+                    {
+                        mrefreshHome.refresh();
+                    }
                 }
                 selecthome();
                 return;

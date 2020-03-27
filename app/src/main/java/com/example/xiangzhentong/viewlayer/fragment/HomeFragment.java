@@ -34,7 +34,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
-public class HomeFragment extends Fragment {
+import static com.example.xiangzhentong.viewlayer.activity.MainActivity.setRefreshHome;
+
+public class HomeFragment extends Fragment implements MainActivity.RefreshHome {
 
     private ViewPager viewPager;  //轮播图模块
     private int[] mImg;
@@ -71,10 +73,16 @@ public class HomeFragment extends Fragment {
             }
         });
         initrefresh();
+        setRefreshHome(this);
         return ThisView;
     }
 
-//    @Override
+    @Override
+    public void refresh() {
+        init();
+    }
+
+    //    @Override
 //    public void onViewCreated(View view, @Nullable Bundle saveInstanceState){
 //        super.onViewCreated(view, saveInstanceState);
 //        this.containerView=view.findViewById(R.id.navhomecontainer);
