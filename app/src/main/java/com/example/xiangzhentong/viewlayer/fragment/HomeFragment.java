@@ -13,6 +13,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.JavascriptInterface;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -56,6 +58,8 @@ public class HomeFragment extends Fragment implements MainActivity.RefreshHome {
     public SwipeRefreshLayout refreshhome;
     private View home;
     private View tuisong;
+    private WebView webView;
+    private int position;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
@@ -92,12 +96,17 @@ public class HomeFragment extends Fragment implements MainActivity.RefreshHome {
         tuisong.setVisibility(View.GONE);
     }
     private void initrefresh(){
+        webView = ThisView.findViewById(R.id.tuisong);
+        webView.loadUrl("file:////android_asset/html/hometuisong.html");
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.addJavascriptInterface(new JShomeInterface(),"home");
         refreshhome = ThisView.findViewById(R.id.refresh_home);
         refreshhome.setColorSchemeResources(R.color.home);
         home = ThisView.findViewById(R.id.homere);
         tuisong = ThisView.findViewById(R.id.tuisong);
         home.setVisibility(View.VISIBLE);
         tuisong.setVisibility(View.GONE);
+        position = 0;
         refreshhome.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -105,9 +114,8 @@ public class HomeFragment extends Fragment implements MainActivity.RefreshHome {
                     home.setVisibility(View.GONE);
                     tuisong.setVisibility(View.VISIBLE);
                 }else {
-                    int a = (int)((Math.random()*10));
-                    TextView te = (TextView)ThisView.findViewById(R.id.te);
-                    te.setText(String.valueOf(a));
+                    position = (int)((Math.random()*10));
+                    webView.loadUrl("file:////android_asset/html/hometuisong.html");
                 }
                 new Handler().postDelayed(new Runnable() {
                     @Override
@@ -117,6 +125,13 @@ public class HomeFragment extends Fragment implements MainActivity.RefreshHome {
                 },1000);
             }
         });
+    }
+    class JShomeInterface{
+        @JavascriptInterface
+        public int home(){
+            Log.d("主页刷新位置",String.valueOf(position));
+            return position;
+        }
     }
     private void initweather(){
         city = (TextView)ThisView.findViewById(R.id.city);

@@ -3,8 +3,7 @@
     android:id="@+id/weather_card"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="279dp"
-    android:background="@color/gray">
+    android:layout_height="279dp">
     <RelativeLayout
         android:id="@+id/fragment_weather_top"
         android:layout_width="match_parent"
