@@ -24,8 +24,16 @@ public class Main2Activity extends AppCompatActivity {
             isExit = false;
         }
     };
+    private SharedPreferences prefs;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        int themeType = prefs.getInt("themeType", 0);
+        if (themeType == 0) {
+            setTheme(R.style.themea);
+        } else {
+            setTheme(R.style.themeb);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         chooseAreaFragment = new ChooseAreaFragment();
@@ -33,7 +41,6 @@ public class Main2Activity extends AppCompatActivity {
                 .add(R.id.choose_area_fragment, chooseAreaFragment, chooseAreaFragment.getClass().getName())
                 .show(chooseAreaFragment)
                 .commit();
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         if (prefs.getString("weather", null) != null) {
             Log.d("城市id",prefs.getString("weather", null));
             Intent intent = new Intent(this, MainActivity.class);

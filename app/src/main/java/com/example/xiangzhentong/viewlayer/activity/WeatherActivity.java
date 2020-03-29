@@ -245,4 +245,12 @@ public class WeatherActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(WeatherActivity.this,MainActivity.class);
+        intent.putExtra("position","home");
+        startActivity(intent);
+        finish();
+    }
 }

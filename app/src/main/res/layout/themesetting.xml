@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".viewlayer.activity.ThemesettingActivity">
+    <include
+        android:id="@+id/settop"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        layout="@layout/topbarzfzcbmxx"
+        />
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settop"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/themeblue"
+            android:layout_width="50dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/cardbackblue"
+            android:text="蓝色主题"/>
+        <Button
+            android:id="@+id/themered"
+            android:layout_width="50dp"
+            android:layout_height="70dp"
+            android:background="@drawable/cardbackred"
+            android:layout_marginLeft="20dp"
+            android:text="红色主题"/>
+    </LinearLayout>
+</RelativeLayout>

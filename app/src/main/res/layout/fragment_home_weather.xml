@@ -16,6 +16,15 @@
             android:layout_marginTop="7dp"
             android:layout_marginStart="10dp"
             android:textSize="20dp"/>
+        <ImageView
+            android:id="@+id/refreshweather"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:src="@drawable/weather"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="5dp"/>
         <TextView
             android:id="@+id/weather"
             android:layout_width="match_parent"

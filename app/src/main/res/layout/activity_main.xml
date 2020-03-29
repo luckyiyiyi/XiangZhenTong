@@ -11,14 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_alignParentTop="true"
-        android:background="@color/home"
+        android:background="?attr/themecolor"
         />
     <RelativeLayout
         android:id="@+id/top"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@id/miana"
-        android:background="@color/home">
+        android:background="?attr/themecolor">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

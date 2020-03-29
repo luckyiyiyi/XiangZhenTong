@@ -33,8 +33,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
-import java.util.Random;
 
 import static com.example.xiangzhentong.viewlayer.activity.MainActivity.setRefreshHome;
 
@@ -60,6 +58,7 @@ public class HomeFragment extends Fragment implements MainActivity.RefreshHome {
     private View tuisong;
     private WebView webView;
     private String position;
+    private ImageView refreshweather;
     private int[] old={20,20,20,20};
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -68,8 +67,8 @@ public class HomeFragment extends Fragment implements MainActivity.RefreshHome {
         activity = getActivity();
         initLoopView();  //实现轮播图
         initweather();
-        View weather_card = ThisView.findViewById(R.id.weather_card);
-        weather_card.setOnClickListener(new View.OnClickListener() {
+        refreshweather = (ImageView)ThisView.findViewById(R.id.refreshweather) ;
+        refreshweather.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(activity, WeatherActivity.class);
