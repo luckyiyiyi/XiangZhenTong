@@ -1,6 +1,8 @@
 package com.example.xiangzhentong.viewlayer.activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +22,14 @@ public class HometuisongxiangxiActivity extends AppCompatActivity {
     private int b;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        int themeType = prefs.getInt("themeType", 0);
+        Log.d("主题状态", String.valueOf(themeType));
+        if (themeType == 0) {
+            setTheme(R.style.themea);
+        } else {
+            setTheme(R.style.themeb);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hometuisongxiangxi);
         Intent intent = getIntent();
