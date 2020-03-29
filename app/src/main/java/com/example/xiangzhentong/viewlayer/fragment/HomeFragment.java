@@ -101,6 +101,7 @@ public class HomeFragment extends Fragment implements MainActivity.RefreshHome {
         webView.loadUrl("file:////android_asset/html/hometuisong.html");
         webView.getSettings().setJavaScriptEnabled(true);
         webView.addJavascriptInterface(new JShomeInterface(),"home");
+        webView.addJavascriptInterface(new JShometoxxInterface(),"hometxx");
         refreshhome = ThisView.findViewById(R.id.refresh_home);
         refreshhome.setColorSchemeResources(R.color.home);
         home = ThisView.findViewById(R.id.homere);
@@ -176,6 +177,16 @@ public class HomeFragment extends Fragment implements MainActivity.RefreshHome {
             position = getfourdiff();
             Log.d("主页刷新位置",String.valueOf(position));
             return position;
+        }
+    }
+    class JShometoxxInterface{
+        @JavascriptInterface
+        public void hometxx(int id){
+            Log.d("测试js调用了java", String.valueOf(id));
+            Intent intent = new Intent();
+            intent.putExtra("hometsposition", String.valueOf(id));
+            intent.setAction("homeltx");
+            startActivity(intent);
         }
     }
     private void initweather(){

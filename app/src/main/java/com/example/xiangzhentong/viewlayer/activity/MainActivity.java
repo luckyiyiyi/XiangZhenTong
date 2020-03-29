@@ -1,11 +1,8 @@
 package com.example.xiangzhentong.viewlayer.activity;
 
-import android.app.Fragment;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,7 +16,6 @@ import com.example.xiangzhentong.viewlayer.fragment.CategoryFragment;
 import com.example.xiangzhentong.viewlayer.fragment.HomeFragment;
 import com.example.xiangzhentong.viewlayer.fragment.SetFragment;
 
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -33,7 +29,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private HomeFragment homeFragment;
     private CategoryFragment categoryFragment;
     private SetFragment setFragment;
-    private String butposiotion = "home";
     private static boolean isExit = false;
     private static Handler mHandler = new Handler() {
 
@@ -47,12 +42,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent intent = getIntent();
-        String position = intent.getStringExtra("position");
-        if(position!=null){
-            butposiotion = position;
-        }
-        Log.d("新的页码",butposiotion);
         homeFragment = new HomeFragment();
         categoryFragment = new CategoryFragment();
         setFragment = new SetFragment();
@@ -60,12 +49,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .add(R.id.main_content,homeFragment,homeFragment.getClass().getName())
                 .add(R.id.main_content,categoryFragment,categoryFragment.getClass().getName())
                 .add(R.id.main_content,setFragment,setFragment.getClass().getName())
+                .show(homeFragment)
+                .hide(categoryFragment)
+                .hide(setFragment)
                 .commit();
-        initView(butposiotion);
+        initView();
     }
 
     //初始化
-    private void initView(String butposiotion){
+    private void initView(){
         navhomeimg = findViewById(R.id.homeimg);
         navcatimg = findViewById(R.id.categoryimg);
         navsetimg = findViewById(R.id.setimg);
@@ -80,20 +72,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         navcategory.setOnClickListener(MainActivity.this);
         View navset = findViewById(R.id.navset);
         navset.setOnClickListener(MainActivity.this);
-        initfragment(butposiotion);
-    }
-    public void initfragment(String butposiotion){
-        switch (butposiotion){
-            case "home":
-                selecthome();
-                return;
-            case "fenlei":
-                selectcat();
-                return;
-            case "shezhi":
-                selectset();
-                return;
-        }
     }
     private static RefreshHome mrefreshHome;
     public interface RefreshHome{

@@ -53,10 +53,10 @@ public class GerenjianzhiActivity extends AppCompatActivity {
         }
     }
     public void intentgrjzl(){
-        Intent intent = new Intent();
-        intent.setClass(GerenjianzhiActivity.this,MainActivity.class);
-        intent.putExtra("position","fenlei");
-        startActivity(intent);
+//        Intent intent = new Intent();
+//        intent.setClass(GerenjianzhiActivity.this,MainActivity.class);
+//        intent.putExtra("position","fenlei");
+//        startActivity(intent);
         finish();
     }
     public void onBackPressed(){

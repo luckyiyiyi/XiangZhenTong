@@ -30,10 +30,10 @@ public class BianminxinxiActivity extends AppCompatActivity {
         webView.getSettings().setJavaScriptEnabled(true);
     }
     public void intentbmxx(){
-        Intent intent = new Intent();
-        intent.setClass(BianminxinxiActivity.this,MainActivity.class);
-        intent.putExtra("position","fenlei");
-        startActivity(intent);
+//        Intent intent = new Intent();
+//        intent.setClass(BianminxinxiActivity.this,MainActivity.class);
+//        intent.putExtra("position","fenlei");
+//        startActivity(intent);
         finish();
     }
     public void onBackPressed(){

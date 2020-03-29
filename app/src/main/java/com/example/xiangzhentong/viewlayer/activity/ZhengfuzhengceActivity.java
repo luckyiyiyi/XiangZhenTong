@@ -44,10 +44,10 @@ public class ZhengfuzhengceActivity extends AppCompatActivity {
         }
     }
     public void intentzfzcl(){
-        Intent intent = new Intent();
-        intent.setClass(ZhengfuzhengceActivity.this,MainActivity.class);
-        intent.putExtra("position","fenlei");
-        startActivity(intent);
+//        Intent intent = new Intent();
+//        intent.setClass(ZhengfuzhengceActivity.this,MainActivity.class);
+//        intent.putExtra("position","fenlei");
+//        startActivity(intent);
         finish();
     }
     public void onBackPressed(){

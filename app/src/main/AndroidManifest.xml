@@ -13,7 +13,14 @@
         android:roundIcon="@drawable/tong"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoBar">
-        <activity android:name=".viewlayer.activity.WeatherActivity"></activity>
+        <activity android:name=".viewlayer.activity.HometuisongxiangxiActivity">
+            <intent-filter>
+                <action android:name="homeltx" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".viewlayer.activity.WeatherActivity" />
         <activity android:name=".viewlayer.activity.GongyiguanggaoxiangxiActivity">
             <intent-filter>
                 <action android:name="gyggltx" />

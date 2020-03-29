@@ -53,10 +53,10 @@ public class GongyiguanggaoActivity extends AppCompatActivity {
         }
     }
     public void intentgyggl(){
-        Intent intent = new Intent();
-        intent.setClass(GongyiguanggaoActivity.this,MainActivity.class);
-        intent.putExtra("position","fenlei");
-        startActivity(intent);
+//        Intent intent = new Intent();
+//        intent.setClass(GongyiguanggaoActivity.this,MainActivity.class);
+//        intent.putExtra("position","fenlei");
+//        startActivity(intent);
         finish();
     }
     public void onBackPressed(){
