@@ -59,7 +59,8 @@ public class HomeFragment extends Fragment implements MainActivity.RefreshHome {
     private View home;
     private View tuisong;
     private WebView webView;
-    private int position;
+    private String position;
+    private int[] old={20,20,20,20};
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
@@ -106,7 +107,6 @@ public class HomeFragment extends Fragment implements MainActivity.RefreshHome {
         tuisong = ThisView.findViewById(R.id.tuisong);
         home.setVisibility(View.VISIBLE);
         tuisong.setVisibility(View.GONE);
-        position = 0;
         refreshhome.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -114,7 +114,6 @@ public class HomeFragment extends Fragment implements MainActivity.RefreshHome {
                     home.setVisibility(View.GONE);
                     tuisong.setVisibility(View.VISIBLE);
                 }else {
-                    position = (int)((Math.random()*10));
                     webView.loadUrl("file:////android_asset/html/hometuisong.html");
                 }
                 new Handler().postDelayed(new Runnable() {
@@ -126,9 +125,55 @@ public class HomeFragment extends Fragment implements MainActivity.RefreshHome {
             }
         });
     }
+    public String getfourdiff(){
+        Log.d("旧刷新页顺序：",String.valueOf(old[0]+" "+old[1]+" "+old[2]+" "+old[3]));
+        int[] arr = new int[4];
+        String abcd = null;
+        int a=0;
+        while (a == 0) {
+            arr[0] = (int)((Math.random()*15));
+            for(int q=0;q<4;q++){
+                if(old[q] != arr[0] && q==3){
+                    a=1;
+                }
+            }
+        }
+        a=0;
+        int i = 1;
+        while (i<=3){
+            int u=0;
+            int x = (int)((Math.random()*15));
+            for(int q=0;q<4;q++){
+                if(old[q] == x){
+                    u=0;
+                    break;
+                }else{
+                    u=1;
+                }
+            }if(u==1){
+                for(int j = 0;j <= i-1;j++){
+                    if(arr[j] == x){
+                        break;
+                    }
+                    if(j+1==i){
+                        arr[i]=x;
+                        i++;
+                    }
+                }
+            }
+        }
+        for(int o=0;o<4;o++){
+            old[o]=arr[o];
+        }
+        Log.d("刷新页顺序：",String.valueOf(arr[0]+" "+arr[1]+" "+arr[2]+" "+arr[3]));
+        abcd = String.valueOf(arr[0])+" "+String.valueOf(arr[1])+" "+String.valueOf(arr[2])+" "+String.valueOf(arr[3]);
+        Log.d("刷新页顺序整合：",abcd);
+        return abcd;
+    }
     class JShomeInterface{
         @JavascriptInterface
-        public int home(){
+        public String home(){
+            position = getfourdiff();
             Log.d("主页刷新位置",String.valueOf(position));
             return position;
         }
