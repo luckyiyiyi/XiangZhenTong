@@ -1,0 +1,57 @@
+.zongbeijing{
+    margin-top:0px;
+    padding-top:0px;
+    background-color: #ebebeb;
+}
+.yuanjiao{
+     height: 106px;
+     margin-left:5px;
+     margin-right:5px;
+     border-radius: 15px / 15px;
+     background-color: white;
+}
+.homeimg{
+    float:left;
+    width:40%;
+}
+.img{
+    width:130px;
+    height:106px;
+    border-radius: 15px 0px 0px 15px;
+}
+.homeright{
+    height: 106px;
+    margin-top:0px;
+    margin-right: 8px;
+    padding-top:0px;
+    width:55%;
+    float:right;
+    position: relative;            /* 父级容器相对定位 */
+}
+.hometxt{
+    margin-top: 5px;
+}
+.title{
+    margin-top: 0px;
+    font-size: 17px;
+}
+.xxyddiv{
+    position: absolute;        /* 相对于容器绝对定位 */
+    bottom: 0px;            /* 距离容器底部0px,无论容器高度多少，都距离底部0px */
+    right: 0px;
+    width:90px;
+    height:30px;
+    border-radius: 10px / 10px;
+    margin-bottom:5px;
+    background-color: blue;
+    text-align:center;
+}
+.xxyd{
+    margin-top: 3px;
+    font-size:15px;
+    color:#ffffff;
+}
+.homebar{
+    width:100%;
+    height:7px;
+}
